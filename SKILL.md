@@ -34,7 +34,7 @@ metadata:
 | 参照ファイル | 内容 |
 |---|---|
 | [prompt-syntax.md](references/prompt-syntax.md) | Kling 4.0固有の記法。世代の違い、プロンプトの式、ショット番号と秒数、ワンカットとキーフレーム、万能リファレンスと`@`タグ、編集の定型文、セリフと音声、画面の文字、除外指定、公式の語彙 |
-| [camera-movements.md](references/camera-movements.md) | カメラの動き42種。日本の現場用語→英語の対応表 |
+| [camera-movements.md](references/camera-movements.md) | カメラの動きの原則と仕組み別の早見表。日本の現場用語→英語の対応表 |
 | [shot-composition.md](references/shot-composition.md) | ショットサイズ、アングルと高さ、構図。日本の略号の注意 |
 | [lens-and-focus.md](references/lens-and-focus.md) | 焦点距離と画角、被写界深度、レンズのルック |
 | [lighting-color.md](references/lighting-color.md) | 三点照明、光の質、時間帯、色温度、カラーグレード |
@@ -42,7 +42,7 @@ metadata:
 | [techniques/index.md](references/techniques/index.md) | 映像技法辞典400種以上（13分類）の索引。技法名・日本語の呼び名から、分類ごとのファイルの説明と記述例を引く |
 | [source-guide.md](references/source-guide.md) | 出典、4.0／4.0 Flashの仕様表、モード別の書き方 |
 
-**Kling 3.0以前や他モデル向けの助言を4.0に適用しない。** 特に旧ガイドの「5秒か10秒」「5〜10秒で完結する簡単な内容に」は旧世代の条件で、4.0は3〜30秒。Seedance用の括弧記法（`{ }` `< >` `【 】`）も持ち込まない。
+**Kling 3.0以前や他モデル向けの助言を4.0に適用しない。** 特に旧ガイドの「5秒か10秒」「5〜10秒で完結する簡単な内容に」は旧世代の条件で、4.0は3〜30秒。他モデル向けの括弧記法（`{ }` `< >` `【 】` など）も持ち込まない。
 
 ## プロンプトの組み立て
 

@@ -1,10 +1,8 @@
-# シネマトグラフィー・カメラワークガイド（42選）
-
-出典：[AI Shot Studio: 42 Camera Movements for AI Video Prompts](https://aishotstudio.com/42-camera-movements-ai-prompts/)（2026-01-30更新）。
+# カメラワークガイド
 
 カメラの動きを日本語だけで「カメラが前に進む」と指示するよりも、**国際標準の映画用語（英語）＋対象や意図の日本語補足**というハイブリッド形式で記述するほうが、意図が正確に伝わります。
 
-本書は、AI動画プロンプト向けに整理された42種類（全44パターン）のカメラワークを6大カテゴリに分類し、プロンプトへの組み込み構文と演出意図をまとめたものです。関連する参照：ショットサイズ・アングル・構図は [shot-composition.md](shot-composition.md)、レンズと被写界深度は [lens-and-focus.md](lens-and-focus.md)、光と色は [lighting-color.md](lighting-color.md)、複数ショットの連続性は [multi-shot-continuity.md](multi-shot-continuity.md)、Kling 4.0 固有の記法は [prompt-syntax.md](prompt-syntax.md)。
+本書は、カメラの動きを「本体が前後に動く」「横に動く」「向きだけ変える」「レンズで寄る」「回り込む」「高さを変える」「視点・ピント」の仕組み別にまとめ、プロンプトへの書き方と演出意図を示します。名前から引く網羅的な一覧（86種）は [techniques/camera-movement.md](techniques/camera-movement.md) にあります。関連する参照：ショットサイズ・アングル・構図は [shot-composition.md](shot-composition.md)、レンズと被写界深度は [lens-and-focus.md](lens-and-focus.md)、光と色は [lighting-color.md](lighting-color.md)、複数ショットの連続性は [multi-shot-continuity.md](multi-shot-continuity.md)、Kling 4.0 固有の記法は [prompt-syntax.md](prompt-syntax.md)。
 
 ---
 
@@ -53,99 +51,104 @@
 
 ---
 
-## 1. Dolly & Track（前後移動・並走・追従）
+## 1. 本体が前後に動く（ドリー・追従）
 
-カメラ本体が台車（ドリー）やレールに乗って空間内を物理的に移動するショット。背景のパースペクティブ（遠近感）が自然に変化します。
+カメラ本体が空間の中を前後に移動する。手前と奥の重なり方（視差）が変わるので、ズームより立体的に見える。
 
-| カメラワーク | 英語プロンプト構文 | 演出意図・活用シーン | Kling 4.0プロンプト記述例 |
+| 動き | 日本語 | 画面で起きること・向く場面 | 記述例 |
 |---|---|---|---|
-| **Slow Dolly In**<br>（スロードリーイン） | `Slow dolly in, camera moves slowly forward toward the subject.` | 親密さ、感情の高まり、緊張感の導入。人物の表情や重要な小道具へのフォーカス。 | `カメラ：Slow dolly in。机に向かう人物の正面へ向かってカメラがゆっくり前進し、バストアップから表情の寄りへ。` |
-| **Slow Dolly Out**<br>（スロードリーアウト） | `Slow dolly out, camera moves slowly backwards away from the subject.` | 孤独感、結末、状況の全体像の提示、被写体が取り残される演出。 | `カメラ：Slow dolly out。立ち尽くす人物からカメラが静かに後退し、周囲の荒涼とした広大な風景を露わにする。` |
-| **Fast Dolly In**<br>（ファストドリーイン） | `Fast dolly in, camera moves rapidly forward toward the subject, urgent motion.` | 切迫感、衝撃、緊急事態、急激な意識の集中。 | `カメラ：Fast dolly in。ドアの向こうを見る人物へ向かってカメラが急接近し、目元の緊迫した表情を捉える。` |
-| **Leading Shot**<br>（リーディングショット / 後退追従） | `Leading shot, camera moves backward matching the subject's speed.` | 前進する被写体の表情を捉え続ける。歩行、ランニング、対話シーン。 | `カメラ：Leading shot。前進してくる人物の速度に合わせてカメラが後ろ向きに後退しながら、正面の表情を追い続ける。` |
-| **Following Shot**<br>（フォロイングショット / 前進追従） | `Following shot, camera follows behind the subject matching speed.` | 被写体と同じ視界・旅路を共有する感覚。未知の場所への進入、没入感。 | `カメラ：Following shot。廊下を奥へと歩く人物の背後を、カメラが一定の距離を保ちながら前進して追尾する。` |
-| **Side Tracking**<br>（サイドラッキング / 並走） | `Side tracking, camera trucks alongside the subject.` | 横方向のダイナミックな移動、旅情、進行のペース感。街並みや背景の流れの描写。 | `カメラ：Side tracking。歩道を早足で歩く人物の真横から、背景のネオンサインを流しながら平行移動で追従する。` |
-| **Worm's Eye Tracking**<br>（地上超ローアングル追従） | `Worm's eye view, low angle tracking, camera moves along the ground looking up.` | 圧倒的な巨大感、足音の重み、緊迫した逃走、ドラマチックな威圧感。 | `カメラ：Worm's eye tracking。地面すれすれの超ローアングルから見上げ、濡れたアスファルトを踏みしめる靴と足元を追尾する。` |
+| Dolly In / Push-in | ドリーイン／プッシュイン | 本体が前進して被写体に近づく。感情の高まり、注目の集中 | `Slow dolly in。カメラ本体が机に向かう人物の正面へゆっくり前進し、胸上から顔の寄りへ変わる。` |
+| Dolly Out / Pull Back | ドリーアウト／プルバック | 本体が後退して周囲を見せる。孤立、状況の開示、結末 | `Slow dolly out。立ち尽くす人物からカメラ本体がゆっくり後退し、何もない雪原の広さが見えてくる。` |
+| Fast Push-in | 急接近 | 短時間で一気に寄る。衝撃、切迫感 | `Fast push-in。物音に振り向いた人物の目元へ、カメラ本体が一気に距離を詰める。` |
+| Leading Shot | リーディング（前から後退しながら追う） | 歩いてくる人物の前をカメラが後ろ向きに進み、正面の表情を保つ。歩きながらの会話 | `Leading shot。こちらへ歩いてくる2人の前を、カメラが同じ速さで後退しながら正面から捉え続ける。` |
+| Following Shot | フォロー（背後から追う） | 被写体の後ろを一定の距離で追う。行き先を一緒に見る没入感 | `Following shot。薄暗い廊下を奥へ歩く人物の背中を、カメラが2mほどの距離を保って追う。` |
 
 ---
 
-## 2. Zoom & Lens Effect（光学ズーム・レンズ効果）
+## 2. 本体が横に動く・並走する（トラック・トラッキング）
 
-カメラ位置を変えずにレンズの焦点距離を変化させる、または特殊なレンズ特性を利用するショット。
+カメラ本体が被写体と平行に横移動する。背景が横へ流れ、移動のスピード感が出る。
 
-| カメラワーク | 英語プロンプト構文 | 演出意図・活用シーン | Kling 4.0プロンプト記述例 |
+| 動き | 日本語 | 画面で起きること・向く場面 | 記述例 |
 |---|---|---|---|
-| **Smooth Optical Zoom In**<br>（スムース光学ズームイン） | `Smooth optical zoom in, lens magnifies subject, camera stays stationary.` | カメラ位置固定で被写体を引き寄せる。観察者視点、監視カメラ風、静かな注視。 | `カメラ：Smooth optical zoom in。カメラは固定のまま、窓辺に立つ人物へ向かって光学ズームで滑らかに寄る。` |
-| **Smooth Optical Zoom Out**<br>（スムース光学ズームアウト） | `Smooth optical zoom out, lens widens, background becomes blurry.` | 被写体から広角へ引き、周囲の広がりや環境のスケールを見せる。 | `カメラ：Smooth optical zoom out。咲き誇る一輪の花から広角へズームアウトし、草原全体の広がりを映し出す。` |
-| **Snap Zoom (Crash Zoom)**<br>（スナップズーム / 急ズーム） | `Snap zoom, crash zoom, rapid zoom directly into the eyes.` | 驚き、衝撃の発見、コメディ的な強調、70年代カンフー映画風演出。 | `カメラ：Snap zoom。物音に気づいて振り返る人物の目元へ、一瞬でガタつきなく急激にズームインする。` |
-| **Vertigo Effect (Zolly)**<br>（めまい効果 / ドリーズーム） | `Vertigo effect, dolly zoom, camera moves backward while zooming in, background expands.` | 衝撃、恐怖、認識の崩壊、強いめまい。被写体のサイズを維持したまま背景の遠近感が急激に歪む。 | `カメラ：Vertigo effect (dolly zoom)。人物のサイズを固定したままカメラが後退しつつズームイン、背後の空間が不気味に歪み広がる。` |
-| **Extreme Macro Zoom**<br>（極限マクロズーム） | `Extreme macro zoom, zoom transition from subject to micro details of surface.` | 肉眼を超えた超ミクロ世界への突入。瞳の虹彩、機械内部、皮膚、水滴。 | `カメラ：Extreme macro zoom。人物の瞳から虹彩の繊維状テクスチャ、微小な光の反射まで極限まで拡大して迫る。` |
-| **Cosmic Hyper Zoom**<br>（コズミックハイパーズーム） | `Cosmic hyper zoom, fast zoom transition from extreme wide view down to macro level.` | 宇宙・地球規模から地上の一点へ、または逆方向の超長距離ワープ演出。 | `カメラ：Cosmic hyper zoom。夜の地球の衛星写真から超高速で急降下し、大都市の特定のビルの屋上へ着地する。` |
-| **Fisheye Lens**<br>（魚眼レンズ / ピープホール） | `Fisheye lens, extreme wide-angle distortion, circular frame.` | 狂気、歪んだ心理、スケートボード動画、覗き穴（ドアスコープ）視点。 | `カメラ：Fisheye lens。超広角の円形魚眼レンズ特有の湾曲を伴い、正面からこちらを覗き込む人物を歪ませて捉える。` |
+| Truck Left / Right | 左右の横移動 | 本体が真横へ平行移動する。並んだ物や人を順に見せる（日本語の「トラックアップ」は前後移動なので別物） | `Truck right。棚に並ぶ瓶の前をカメラが右へ平行移動し、端で作業する店主にたどり着く。` |
+| Side Tracking | 並走 | 移動する被写体の真横を同じ速さで進む。背景が流れ、進むペースが伝わる | `Side tracking。夜の歩道を早足で歩く人物の真横をカメラが並走し、背景の看板の光が横へ流れる。` |
+| Low Tracking | 足元の追従 | 地面近くの低い位置で足元や車輪を追う。重さ、疾走感 | `Low tracking。地面すれすれの高さで、水たまりを踏む靴を横から追う。` |
+| Foreground Wipe Reveal | 手前の遮蔽物越しの開示 | 手前の柱や木の陰から横へ抜け、奥の被写体を見せる。登場、場面の切り替え | `カメラが手前の太い木の幹の陰から右へ抜け、奥のベンチに座る人物が現れる。` |
 
 ---
 
-## 3. Pan, Tilt & Truck（角度変更・水平移動・構図）
+## 3. 向きだけ変える（パン・チルト・ロール）
 
-カメラの三脚・軸を中心にレンズの向きを変える（Pan/Tilt）、またはレール上で横移動する（Truck）ショット。
+カメラの位置は固定し、向きだけを変える。空間の奥行きの見え方は変わらない。
 
-| カメラワーク | 英語プロンプト構文 | 演出意図・活用シーン | Kling 4.0プロンプト記述例 |
+| 動き | 日本語 | 画面で起きること・向く場面 | 記述例 |
 |---|---|---|---|
-| **Tilt Up**<br>（チルトアップ） | `Tilt up, camera pivots vertically upward from bottom to top.` | 足元から全身・顔への視線移動、巨大建築や怪獣の威容、希望の上昇。 | `カメラ：Tilt up。足元の石畳からゆっくりとレンズを上へ向け、そびえ立つ古城の尖塔と青空を仰ぎ見る。` |
-| **Tilt Down**<br>（チルトダウン） | `Tilt down, camera pivots vertically downward from top to bottom.` | 空から地上へ、落胆、崩壊、見下ろす視線、物語の開始（街の俯瞰から通りへ）。 | `カメラ：Tilt down。薄暮の曇り空からゆっくり見下ろし、雨で濡れた交差点を行き交う傘の波へパンダウンする。` |
-| **Truck Left**<br>（トラックレフト / 左横移動）※日本語の「トラックアップ／バック」は前後移動を指す別語 | `Truck left, camera moves sideways on a track to the left.` | 被写体と直交する横方向への移動。横スクロール的な情景描写、群衆の横断。 | `カメラ：Truck left。書架の前に立つ人物を横に見ながら、カメラが左方向へ滑らかにスライド移動する。` |
-| **Truck Right**<br>（トラックライト / 右横移動） | `Truck right, camera moves sideways on a track to the right.` | 物語の進行、時間の経過、パノラマ的な空間の開示。 | `カメラ：Truck right。実験室の作業台に並ぶ機材の列を右へ横移動しながら、奥で作業する研究者を捉える。` |
-| **Whip Pan**<br>（ホイップパン / 高速パン） | `Whip pan, camera whips violently to the side with extreme directional motion blur.` | 激しい場面転換、予期せぬ闖入者への素早い振り向き、アクションの勢い。 | `カメラ：Whip pan。激しいモーションブラーを伴ってカメラが右へ高速で振り向き、爆発の煙を瞬時に捉える。` |
-| **Dutch Angle**<br>（ダッチアングル / 斜角・静止構図）※回転する動きは Barrel Roll | `Dutch angle, tilted horizon, static frame canted about 25 degrees on the Z-axis.` | 不穏、精神的不安定、混沌、悪役の登場、危険な事態。 | `カメラ：Dutch angle。カメラがZ軸に約25度傾いた斜めの構図で、薄暗い路地に佇む不気味な人物を捉える。` |
-| **Over the Shoulder (OTS)**<br>（肩越しショット） | `Over the shoulder shot, camera mounted behind subject A framing subject B.` | 2者間の対話、対峙、視線の交錯、客観と主観の中間。 | `カメラ：Over the shoulder shot。手前の人物の肩と後頭部をボケ味でフレームに入れ、向かい合って話す相手の表情を映す。` |
+| Pan Left / Right | パン | 水平方向に首を振る。空間を見渡す、視線の先を見せる（上下の動きはパンと呼ばない） | `Slow pan right。カメラは固定のまま右へゆっくり向きを変え、窓辺から部屋の奥のドアまでを見渡す。` |
+| Tilt Up / Down | チルト | 垂直方向に首を振る。足元から顔へ、高い建物を仰ぐ（日本語の「パンアップ」はこれ） | `Slow tilt up。石畳の足元からゆっくり上を向き、塔の先端と空までを見せる。` |
+| Whip Pan | ホイップパン | 一瞬で振り向くように速く振り、流れるブレが出る。驚き、場面転換 | `Whip pan。強い横方向のモーションブラーとともにカメラが右へ一瞬で振れ、立ち上る煙を捉える。` |
+| Camera Roll | ロール | レンズの軸を中心に画面が回転する。混乱、無重力、夢 | `Slow camera roll。画面がゆっくり時計回りに回転し、水平線が傾いていく。` |
+
+静止したまま画面を斜めに傾ける構図（`dutch angle`）は動きではないので、[shot-composition.md](shot-composition.md) を参照する。
 
 ---
 
-## 4. Orbit & Rotation（旋回・アーク・回転）
+## 4. レンズで寄る・引く（ズーム）
 
-被写体を中心として周囲を円弧状に回り込む、またはカメラ自体が回転するダイナミックなショット。
+カメラの位置は変えず、焦点距離を変える。重なり方が変わらないため、画が平面的に拡大・縮小する。
 
-| カメラワーク | 英語プロンプト構文 | 演出意図・活用シーン | Kling 4.0プロンプト記述例 |
+| 動き | 日本語 | 画面で起きること・向く場面 | 記述例 |
 |---|---|---|---|
-| **Orbit 180**<br>（180度オービット / 半周旋回） | `Orbit 180, camera moves in a half-circle around the subject.` | 正面から横顔、背後へのドラマチックな視点転換。決意の表明、状況の把握。 | `カメラ：Orbit 180。立ち止まる人物の周囲を半円を描いて回り込み、正面の決意の表情から見つめる先の荒野へ視界を開く。` |
-| **Fast 360 Orbit**<br>（高速360度オービット） | `Fast 360 orbit, camera spins rapidly 360 degrees around the subject.` | 混乱、変身シーン、クライマックス、覚醒、圧倒的なエネルギー。 | `カメラ：Fast 360 orbit。光を纏って浮遊する人物の周囲を、カメラが高速で360度回転しながら旋回する。` |
-| **Slow Cinematic Arc**<br>（スローシネマティックアーク） | `Slow cinematic arc, camera moves in a wide curve to reveal side profile.` | 優雅さ、荘厳さ、ハイブランドCM風の高級感、静かな対決。 | `カメラ：Slow cinematic arc。台座に置かれた製品の斜め前から側面へ、優雅な弧を描いて滑らかに移動する。` |
-| **Barrel Roll**<br>（バレルロール / 鏡筒回転） | `Barrel roll, camera spins 360 degrees clockwise while moving forward, disorienting.` | 航空機の飛行、無重力、夢の中、上下感覚の喪失、激しいアクション。 | `カメラ：Barrel roll。前進しながらカメラが時計回りに360度ダイナミックにロール回転し、天地が逆転する。` |
-| **Bullet Time**<br>（バレットタイム / 時間停止旋回） | `Bullet time, frozen moment, ultra slow motion, camera orbit right.` | 時間が止まった超スローモーション空間の中でカメラだけが移動するマトリックス風演出。 | `カメラ：Bullet time。水滴が空中で静止した極限のスローモーションの中、カメラが右方向へ回り込んで静止した飛沫を映す。` |
+| Zoom In / Out | ズームイン／アウト | 位置を変えずに寄る・引く。観察者の視点、監視カメラ的な注視 | `Slow zoom in。カメラは三脚で固定したまま、窓辺に立つ人物へレンズでゆっくり寄る。` |
+| Crash Zoom | クラッシュズーム／急ズーム | 一瞬で急激に寄る。驚き、発見、コメディの強調 | `Crash zoom。振り返った人物の目元へ、一瞬で急ズームして止まる。` |
+| Dolly Zoom | ドリーズーム（めまい効果） | 後退しながらズームインし、被写体の大きさを保ったまま背景だけが伸び縮みする。衝撃、認識の崩れ | `Dolly zoom。人物の顔の大きさを保ったまま、カメラが後退しつつズームインし、背後の廊下が奥へ引き伸ばされる。` |
+| Macro Push | マクロへの接近 | 被写体の表面の微細な質感まで寄っていく。瞳、機械の内部、水滴 | `Macro push。人物の瞳から、虹彩の筋と映り込んだ光の粒が見えるまで寄っていく。` |
 
 ---
 
-## 5. Drone & Crane（昇降・高低差・空撮）
+## 5. 回り込む（アーク・オービット）
 
-カメラを垂直方向に上下動させる（ペデスタル/クレーン）、または空中を飛行させて広大な空間を捉えるショット。
+被写体を中心に円弧を描いて移動する。見る角度が連続して変わり、立体感と見せ場が生まれる。
 
-| カメラワーク | 英語プロンプト構文 | 演出意図・活用シーン | Kling 4.0プロンプト記述例 |
+| 動き | 日本語 | 画面で起きること・向く場面 | 記述例 |
 |---|---|---|---|
-| **Pedestal Up**<br>（ペデスタルアップ / 垂直上昇） | `Pedestal up, camera rises vertically straight up from waist to eye level.` | 角度を変えずに垂直に上がる。被写体の立ち上がり、隠れた要素の提示。 | `カメラ：Pedestal up。カメラの角度を水平に保ったまま垂直に上昇し、机の上の書類から人物の真剣な横顔へと高さを合わせる。` |
-| **Pedestal Down**<br>（ペデスタルダウン / 垂直下降） | `Pedestal down, camera lowers vertically straight down.` | 立ち位置からしゃがみ込みへの追従、地面や床の痕跡への視線誘導。 | `カメラ：Pedestal down。立っている人物の目線から垂直に下降し、床に落ちた割れたガラスの破片へ高さを合わせる。` |
-| **Crane Up**<br>（クレーンアップ / ハイアングル俯瞰展開） | `Crane up, camera lifts high into the air.` | 個人の物語から世界全体のスケールへの拡張、旅立ち、幕引き。 | `カメラ：Crane up。港に立つ人物のアップから、アームが大きく上空へせり上がり、停泊する巨大な船と港全体を俯瞰する。` |
-| **Crane Down**<br>（クレーンダウン / 着地・接近） | `Crane down, camera descends slowly to the subject.` | 壮大な全体像から特定の人物やドラマへの没入、物語の開幕。 | `カメラ：Crane down。大都市のビル群の上空からゆっくりと下降し、ビルの屋上ベンチに座る一人の人物の横へ着地する。` |
-| **Drone Fly Over**<br>（ドローンフライオーバー） | `Drone fly over, high altitude flight moving forward over the landscape.` | 大自然、大都市、道路、広大な地形の前進飛行。圧倒的なスケール感。 | `カメラ：Drone fly over。木々の梢すれすれの高高度をドローンが高速で前進飛行し、眼下に広がる針葉樹林と山脈を映す。` |
-| **Epic Drone Reveal**<br>（エピックドローンリビール） | `Epic drone reveal, rising and tilting down to reveal the scene.` | 上昇しながら見下ろすことで、稜線や建物の向こうに隠れていた絶景を開示する。 | `カメラ：Epic drone reveal。岩山の尾根を越えながら急上昇し、チルトダウンして眼下に広がるエメラルドグリーンの湖を劇的に開示する。` |
-| **Large Scale Drone Orbit**<br>（超広域ドローン旋回） | `Large scale drone orbit, massive sweeping circle around the landscape.` | 灯台、孤島、城、山頂のモニュメントなどを中心とした巨大な円周旋回。 | `カメラ：Large scale drone orbit。孤島に立つ白亜の灯台を中心軸として、ドローンが海上を大きく旋回しながら全景を捉える。` |
-| **Top Down (God's Eye View)**<br>（トップダウン / 真俯瞰） | `Top down shot, camera pointing straight down, slow twist.` | 幾何学的な美しさ、神の視点、迷路、横断歩道、ベッドに横たわる人物。 | `カメラ：Top down shot。真上から地面へレンズを垂直に向けた真俯瞰構図。カメラがゆっくりと自転しながら交差点の横断歩道を捉える。` |
-| **FPV Drone Aggressive**<br>（FPVドローン急降下） | `FPV drone dive, aggressive diving motion down a vertical structure.` | エクストリームスポーツ風の超絶アクロバット。ビル壁面の垂直ダイブ。 | `カメラ：FPV drone dive。超高層ビルの垂直なガラス壁面に沿ってカメラが真下へ急降下し、地上すれすれで水平飛行へ引き起こす。` |
+| Arc Shot | アーク（弧を描く移動） | 斜め前から横顔へなど、弧の一部だけ回る。優雅さ、商品の立体感 | `Slow arc shot。台座の上の香水瓶の斜め前から、真横の輪郭が見える位置まで弧を描いて回る。` |
+| Orbit 180 | 半周の回り込み | 正面から背後まで半周し、人物が見ている先へ視界を開く | `Slow 180-degree orbit。立ち止まった人物の周りを半周し、正面の表情から、その視線の先の荒野へ視界が開ける。` |
+| Orbit 360 | 一周の回り込み | 被写体の周りを一周する。変身、覚醒、クライマックス | `360-degree orbit。宙に浮かぶ人物の周りをカメラが一周し、背景の光の粒が円を描いて流れる。` |
+| Bullet Time | バレットタイム | 時間がほぼ止まった中でカメラだけが回り込む。決定的な瞬間の強調 | `Bullet time。飛び散る水しぶきが空中で止まった中を、カメラだけが右へ回り込む。` |
 
 ---
 
-## 6. POV, Focus & Transition（視点・フォーカス・場面転換）
+## 6. 高さを変える・空撮（ペデスタル・クレーン・ドローン）
 
-被写体の主観（POV）、ピント移動による視線誘導、遮蔽物を利用したトランジション。
+カメラの高さを変える、または空中を移動して大きな空間を見せる。
 
-| カメラワーク | 英語プロンプト構文 | 演出意図・活用シーン | Kling 4.0プロンプト記述例 |
+| 動き | 日本語 | 画面で起きること・向く場面 | 記述例 |
 |---|---|---|---|
-| **POV Walk**<br>（主観歩行 / 一人称視点） | `POV walk, first person camera moving forward with bobbing motion.` | 体験の追体験、探索、ホラーゲーム風の没入、未知の扉を開ける緊張感。 | `カメラ：POV walk。人物の目線（一人称視点）で、歩行に伴う自然な揺れを伴いながら薄暗い洋館の廊下を前進する。` |
-| **Handheld Documentary**<br>（手持ちドキュメンタリー風） | `Handheld camera, subtle natural micro-movement, documentary style.` | 生々しいリアリティ、現場感、ニュース取材風、即時性、生配信風。 | `カメラ：Handheld camera。手持ちカメラ特有の微小な手振れと自然なリフォーカスを伴い、厨房で調理するシェフの動きを追う。` |
-| **Reveal from Behind (Wipe)**<br>（障害物越しのリビール） | `Wipe movement, camera slides laterally from behind foreground object to reveal the scene.` | 木や柱、壁の後ろからスライドして奥の景色や人物をドラマチックに見せる。 | `カメラ：Reveal from behind。手前にある巨大な木の幹の背後からカメラが右へスライドし、木陰の向こうで佇む人物を露わにする。` |
-| **Fly Through**<br>（スルーショット / 貫通通過） | `Fly through, camera moves through an opening into the scene.` | 鍵穴、窓ガラス、フェンスの隙間、トンネルを通り抜けて別世界へ入る。 | `カメラ：Fly through。アンティーク調の窓枠の隙間をすり抜けるようにカメラが屋外から室内へスムーズに進入する。` |
-| **Rack Focus**<br>（ラックフォーカス / ピント送り） | `Rack focus, focus shifts from the foreground object to the background subject.` | 視線誘導。手前の小道具（グラス、手紙など）から奥の人物へピントを切り替える。 | `カメラ：Rack focus。手前の雨粒がついた窓ガラスに合っていたピントが、ゆっくりと奥の通りを歩く人物へと移動して鮮明になる。` |
-| **Reveal from Blur**<br>（ボケからのリビール） | `Rack focus, start completely out of focus, slowly pull focus until sharp.` | 意識の回復、目覚め、幻想的なオープニング、夢から現実への移行。 | `カメラ：Reveal from blur。画面全体が完全にぼやけた玉ボケ状態から始まり、徐々にピントが合って朝の光の中にいる人物の笑顔が浮かび上がる。` |
-| **Hyperlapse**<br>（ハイパーラプス / 移動微速度撮影） | `Hyperlapse, camera moves forward rapidly, time accelerated, fast motion, light trails.` | 時間の超圧縮、都市の喧騒、光の軌跡、長距離の瞬間移動。 | `カメラ：Hyperlapse。夜の繁華街の歩道をカメラが早回しで前進。周囲の人々や車のヘッドライトが光の筋となって流れる。` |
+| Pedestal Up / Down | ペデスタル（垂直の昇降） | 角度を変えずにまっすぐ上下する。立ち上がる人物に合わせる、床の手がかりを見せる | `Pedestal down。立っている人物の目の高さから、角度を保ったまま床に落ちたガラス片の高さまで下がる。` |
+| Crane Up / Down | クレーン | 大きく上昇・下降し、個人と世界のスケールを行き来する。旅立ち、幕開け、幕引き | `Crane up。港に立つ人物の寄りから大きく上昇し、停泊する船と港町全体を見下ろす。` |
+| Aerial Flyover | 空撮の前進飛行 | 高い位置から地形の上を前進する。スケール感、移動の始まり | `Aerial flyover。針葉樹の森の梢の少し上を、ドローンが山並みへ向かって前進する。` |
+| Drone Reveal | 上昇しながらの開示 | 稜線や建物を越えて上昇し、見下ろして奥の景色を見せる | `ドローンが岩の稜線を越えて上昇し、下を向くと、眼下に青緑の湖が広がる。` |
+| Aerial Orbit | 空撮の旋回 | 灯台や城など1つの目印の周りを大きく旋回する | `Aerial orbit。岬の白い灯台を中心に、ドローンが海の上を大きく旋回する。` |
+| Top-down Shot | 真俯瞰 | 真上から見下ろす。図形的な美しさ、交差点、横たわる人物 | `Top-down shot。真上から見下ろした交差点を、カメラがゆっくり回転しながら捉える。` |
+| FPV Dive | FPVドローンの急降下 | 小型ドローンで建物の壁面に沿って急降下するなど、攻めた軌道 | `FPV dive。高層ビルのガラス壁に沿って真下へ急降下し、地上の手前で水平飛行に切り替える。` |
+
+---
+
+## 7. 視点・支持方法・ピント
+
+誰の目で見るか、どう支えるか、どこにピントを置くかの指定。移動の指示と組み合わせる。
+
+| 動き | 日本語 | 画面で起きること・向く場面 | 記述例 |
+|---|---|---|---|
+| POV Shot | 主観（一人称） | 人物の目線で見る。本人の体は基本的に写らない。探索、没入 | `POV shot。人物の目線で、歩くたびに小さく揺れながら薄暗い洋館の廊下を進む。` |
+| Handheld | 手持ち | 小さな揺れが残る。現場感、記録映像らしさ（強くしすぎると形が崩れやすい） | `Subtle handheld。手持ちの小さな揺れを残しながら、厨房で調理するシェフの手元を追う。` |
+| Fly-through | 通り抜け | 窓枠や隙間を抜けて別の空間へ入る。場面のつなぎ | `カメラが開いた窓枠をくぐり抜け、屋外から室内の食卓へ入っていく。` |
+| Rack Focus | ピント送り | 手前から奥へ（または逆へ）ピントを移し、見る対象を切り替える | `Rack focus。雨粒のついた窓ガラスに合っていたピントが、奥の通りを歩く人物へゆっくり移る。` |
+| Focus from Blur | ボケからピントが合う | 全体がぼけた状態から徐々にピントが合う。目覚め、幻想的な始まり | `画面全体がぼけた状態から始まり、ゆっくりピントが合って、朝の光の中の人物の笑顔が見えてくる。` |
+| Hyperlapse | ハイパーラプス | 移動しながら時間を早送りにする。都市の流れ、長い距離の移動 | `Hyperlapse。夜の繁華街をカメラが早送りで前進し、車のライトが光の筋になって流れる。` |
+
+魚眼などのレンズの見え方は [lens-and-focus.md](lens-and-focus.md)、肩越しの構図（`over-the-shoulder`）は [shot-composition.md](shot-composition.md) を参照する。
 
 ---
 

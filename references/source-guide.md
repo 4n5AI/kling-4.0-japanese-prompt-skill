@@ -1,6 +1,6 @@
 # 出典・設定・モード別ガイド
 
-確認日：Kling公式資料は**2026-09-29**、シネマトグラフィー資料は2026-09-08（Seedance版から引き継ぎ）。Kling の Web 版（kling.ai）の説明を、すべての Kling 提供サービスや API の仕様へ一般化しない。数値は資料上の条件であり、実際の提供状況は利用画面・現行公式資料で確認する。
+確認日：Kling公式資料は**2026-09-29**。Kling の Web 版（kling.ai）の説明を、すべての Kling 提供サービスや API の仕様へ一般化しない。数値は資料上の条件であり、実際の提供状況は利用画面・現行公式資料で確認する。
 
 ## 確度の区分
 
@@ -73,27 +73,9 @@
 - 日本語プロンプトの精度（英語のほうが複雑な指定で有利）：日本語の解説記事の複数が一致。
 - Custom Multi-Shot でメイン欄を空にする運用：単一の解説（**【未確認】**）。
 
-## 4. シネマトグラフィー資料（Seedance版から引き継ぎ）
+## 4. シネマトグラフィーと映像技法辞典
 
-| 資料 | 取得状況 | 採用する用途 |
-|---|---|---|
-| [AI Shot Studio カメラワークガイド](https://aishotstudio.com/42-camera-movements-ai-prompts/) | 2026-01-30更新、本文取得済み | 42種類のカメラワーク、英語構文、演出意図 |
-| [CinematographyStoryboards](https://github.com/4n5AI/CinematographyStoryboards) | リポジトリから本文取得済み | 7軸66用語の体系（SHOT SIZE / ANGLE / CAMERA MOVEMENT / LENS & OPTICS / TIME & SPEED / LIGHTING / COMPOSITION）と日本語の記述 |
-
-次の資料は Seedance版の作成時（2026-09-08）に参照先として指定されたが、**作成環境のネットワーク制限で本文を取得できなかった**。該当分野の記述は、検索結果と到達できた一次情報源（メーカー・レンタル各社の技術資料、物理の公式、公開されている用語集など）から再構成しており、**指定ページからの逐語ではない**。
-
-| 指定資料 | 分野 | 取得状況 |
-|---|---|---|
-| [4n5AI/CinematographyStoryboards（公開サイト）](https://4n5ai.github.io/CinematographyStoryboards/) | 用語体系全般 | サイトは未取得。同じ内容をリポジトリから取得済み |
-| [システムケイ 焦点距離と画角](https://systemk-camera.jp/camera-blog/knowledge/what-focallength-fieldangle.php) | 焦点距離・画角 | 未取得。画角表は計算式から自前で算出し検証 |
-| [K.OFFICE シネマレンズ](https://k-office.pro/2025/06/16/cinema-lens/) | シネマレンズ | 未取得。T値・ブリージング等は他の技術資料で確認 |
-| [ジャムデザイン カメラワーク](https://jamdesign.co.jp/staffblog/202211cameraworks20221104/) | カメラワーク | 未取得 |
-| [TAMRON カメラワークの基本](https://www.tamron.com/jp/consumer/sp/impression/detail/article-camera-work-basics-types-and-effects.html) | カメラワーク | 未取得 |
-| [Vook](https://vook.vc/n/5562) | 構図・フレーミング | 未取得 |
-| [中澤正行 映画技法講座（上手と下手）](https://note.com/crybastion/n/n106174217c0a) | 画面の左右と移動方向 | 未取得。方向の定義のみ他資料で確認 |
-| [渋谷ムービー コラム](https://shibuyamovie.tokyo/column/524/) | カメラワーク | 未取得 |
-
-映像技法辞典（[techniques/index.md](techniques/index.md)、400種以上）の説明と記述例は、一般的な撮影・編集・映像表現の知識を基にこのリポジトリで書き下ろしたもの。Kling 4.0 での効き目は検証していない（**【未確認】**）。
+カメラワーク・ショット・レンズ・ライティング・連続性の各ガイドと、映像技法辞典（[techniques/index.md](techniques/index.md)、400種以上）の説明と記述例は、一般的な撮影・編集・映像表現の知識と物理の計算式を基にこのリポジトリで書き下ろしたもの。Kling 4.0 での効き目は検証していない（**【未確認】**）。
 
 シネマトグラフィーの知識は一般的な撮影知識であり、**Klingの公式資料には含まれない**。「どの語彙がAI動画モデルに効くか」の記述は第三者の検証報告に基づき、その多くは他モデルでの検証である。**Kling 4.0 での検証ではない。**
 

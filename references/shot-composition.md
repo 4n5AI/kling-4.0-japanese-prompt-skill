@@ -2,7 +2,7 @@
 
 「どこまで写すか」「どこから見るか」「どこに置くか」をプロンプトで言語化するための参照。カメラの動きは [camera-movements.md](camera-movements.md)、レンズは [lens-and-focus.md](lens-and-focus.md)、光と色は [lighting-color.md](lighting-color.md)、複数ショットの連続性は [multi-shot-continuity.md](multi-shot-continuity.md) を参照する。
 
-用語の体系と日本語の記述は [CinematographyStoryboards](https://github.com/4n5AI/CinematographyStoryboards)（SHOT SIZE / ANGLE / COMPOSITION の各軸）に合わせ、AIプロンプト向けの英語表記と注意点を補っている。
+ショットサイズ・アングル・構図の3つの軸で用語を整理し、AIプロンプト向けの英語表記と注意点を添えている。
 
 ---
 
