@@ -1,0 +1,1 @@
+# kling-4.0-japanese-prompt-skill
