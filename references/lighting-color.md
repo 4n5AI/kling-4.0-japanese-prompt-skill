@@ -2,7 +2,7 @@
 
 光と色をプロンプトで言語化するための参照。ショットサイズと構図は [shot-composition.md](shot-composition.md)、レンズは [lens-and-focus.md](lens-and-focus.md)、カメラの動きは [camera-movements.md](camera-movements.md) を参照する。
 
-用語の体系と日本語の記述は [CinematographyStoryboards](https://github.com/4n5AI/CinematographyStoryboards) の LIGHTING 軸に合わせ、人物ライティングのパターンとカラーグレードを補っている。
+照明の基本構成、人物ライティングのパターン、光の質、時間帯、色温度、カラーグレードの順に整理している。
 
 ---
 

@@ -4,7 +4,7 @@ Kling 4.0（4.0 Flashを含む）の動画プロンプトを、日本語で作�
 
 [Agent Skills](https://agentskills.io) 標準の `SKILL.md` 形式で書かれており、**OpenAI Codex、Claude Code、Google Antigravity、Gemini CLI、Cursor、GitHub Copilot、OpenCode** など、この形式に対応する生成AIエージェントで共通に使えます。特定のエージェント専用の記述は `SKILL.md` に含めていません。
 
-リポジトリ名は `kling-4.0-japanese-prompt-skill`、**Skill名とインストール先のフォルダー名は `kling-40`** です。Kling AI（Kuaishou）が提供する公式Skillではありません。姉妹版の [seedance-2.5-japanese-prompt-skill](https://github.com/4n5AI/seedance-2.5-japanese-prompt-skill) をフォークし、モデルに依存しないシネマトグラフィーと技法辞典を共有しています。
+リポジトリ名は `kling-4.0-japanese-prompt-skill`、**Skill名とインストール先のフォルダー名は `kling-40`** です。Kling AI（Kuaishou）が提供する公式Skillではありません。
 
 ## 特徴
 
@@ -22,7 +22,7 @@ Kling公式の4.0リリースノートと、3.0／3.0 Omni／O1のユーザー�
 
 | 項目 | 内容 |
 |---|---|
-| 世代の違い | 4.0は3〜30秒、4.0 Flashは3〜20秒・720p。旧世代の「5秒か10秒」やSeedanceの括弧記法を持ち込まない |
+| 世代の違い | 4.0は3〜30秒、4.0 Flashは3〜20秒・720p。旧世代の「5秒か10秒」や他モデル向けの括弧記法を持ち込まない |
 | ショット構成 | `Shot 1 (3s):` のショット番号と秒数、Multi-Shot／Custom Multi-Shot、`N秒間のワンカット` と「4秒目で」の時間指定 |
 | キーフレーム | 最大10枚のキーフレーム画像と、区間ごとの変化の書き方 |
 | 万能リファレンス | 合計15点（画像10・動画5本で合計30秒・被写体7）、`@タグ`の書き方、素材ごとの役割の宣言 |
@@ -36,7 +36,7 @@ Kling公式の4.0リリースノートと、3.0／3.0 Omni／O1のユーザー�
 
 | リファレンス | 内容 |
 |---|---|
-| [`camera-movements.md`](references/camera-movements.md) | カメラの動き42種（Dolly・Zoom・Pan/Tilt・Orbit・Drone/Crane・POV/Focus） |
+| [`camera-movements.md`](references/camera-movements.md) | カメラの動きの原則と、仕組み別の早見表（前後・横移動・パン/チルト・ズーム・回り込み・昇降/空撮・視点/ピント） |
 | [`shot-composition.md`](references/shot-composition.md) | ショットサイズ（ELS〜ECU）、アングルと高さ、構図11種 |
 | [`lens-and-focus.md`](references/lens-and-focus.md) | 焦点距離と画角の早見表、被写界深度、アナモルフィック・ヴィンテージのルック |
 | [`lighting-color.md`](references/lighting-color.md) | 三点照明とライティングパターン、光の質、時間帯、色温度、カラーグレード |
@@ -185,7 +185,7 @@ Skill本文はインストール先の skills/kling-40/SKILL.md にある。
 
 - [`SKILL.md`](SKILL.md)：プロンプトの作成手順とセリフの表記ルール。frontmatterは Agent Skills 仕様のフィールド（`name`・`description`・`metadata`）のみを使用
 - [`references/prompt-syntax.md`](references/prompt-syntax.md)：Kling 4.0固有の記法（世代の違い、ショット番号と秒数、ワンカットとキーフレーム、万能リファレンスと`@`タグ、編集の定型文、セリフと音声、画面の文字、除外指定、公式の語彙）
-- [`references/camera-movements.md`](references/camera-movements.md)：カメラワーク42種と日本語現場用語の対応表
+- [`references/camera-movements.md`](references/camera-movements.md)：カメラワークの原則・早見表と日本語現場用語の対応表
 - [`references/shot-composition.md`](references/shot-composition.md)：ショットサイズ、アングルと高さ、構図
 - [`references/lens-and-focus.md`](references/lens-and-focus.md)：焦点距離と画角、被写界深度、レンズのルック
 - [`references/lighting-color.md`](references/lighting-color.md)：ライティング、時間帯、色温度、カラーグレード
@@ -207,14 +207,7 @@ Kling公式資料（確認日：**2026-09-29**）。
 - [Kling Element Library User Guide](https://kling.ai/quickstart/klingai-element-library-3-user-guide)（本文取得済み）
 - [Kling AI Prompt Guide（公式ブログ）](https://kling.ai/blog/kling-ai-prompt-guide) ほか公式ブログ・旧ガイド（一覧は [出典ガイド](references/source-guide.md)）
 
-シネマトグラフィー資料（確認日：**2026-09-08**、Seedance版から引き継ぎ）。
-
-- [AI Shot Studio: 42 Camera Movements for AI Video Prompts](https://aishotstudio.com/42-camera-movements-ai-prompts/)（本文取得済み）
-- [4n5AI/CinematographyStoryboards](https://github.com/4n5AI/CinematographyStoryboards)（7軸66用語の体系。リポジトリから取得済み）
-
-このほか、焦点距離・画角・シネマレンズ・カメラワーク・構図の各分野について参照先の指定がありましたが、作成環境のネットワーク制限で本文を取得できませんでした。該当分野の記述は検索結果と到達できた一次情報源（メーカーやレンタル各社の技術資料、物理の公式、公開されている用語集）から再構成しており、指定ページからの逐語ではありません。取得状況の一覧は [出典ガイド](references/source-guide.md) にあります。
-
-映像技法辞典（`references/techniques/`）の説明と記述例は、一般的な撮影・編集・映像表現の知識を基にこのリポジトリで書き下ろしたものです。Kling 4.0 での効き目は検証していません。
+シネマトグラフィーの各ガイドと映像技法辞典（`references/techniques/`）の説明と記述例は、一般的な撮影・編集・映像表現の知識を基にこのリポジトリで書き下ろしたものです。Kling 4.0 での効き目は検証していません。
 
 **確度の扱い**：Skillの各記述には確度を付けています。公式資料で本文を確認したもの（3.0以前の資料に由来するものは世代を明記）、複数の第三者情報源が一致するもの、裏付けが弱いものを区別し、公式で未確認の事項をユーザーへ断定して伝えない方針です。シネマトグラフィーの知識は一般的な撮影知識であり、Klingの公式資料には含まれません。「どの語彙がAI動画モデルに効くか」の記述は第三者の検証報告に基づき、その多くは他モデルでの検証です。
 
@@ -222,7 +215,7 @@ Kling公式資料（確認日：**2026-09-29**）。
 
 ## ライセンス
 
-[MIT License](LICENSE) です。個人・商用を問わず、誰でも無料で自由に使用・複製・改変・再配布できます。条件は、著作権表示とライセンス文を残すことだけです。ライセンスの対象はこのリポジトリに含まれるファイルであり、「出典」に挙げた外部資料（Kling AI、AI Shot Studio ほか）の権利は各提供元に帰属します。
+[MIT License](LICENSE) です。個人・商用を問わず、誰でも無料で自由に使用・複製・改変・再配布できます。条件は、著作権表示とライセンス文を残すことだけです。ライセンスの対象はこのリポジトリに含まれるファイルであり、「出典」に挙げた外部資料（Kling AI ほか）の権利は各提供元に帰属します。
 
 ## 既知の注意点
 
