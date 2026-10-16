@@ -47,7 +47,7 @@
 
 ## 4. 連続撮影
 
-ワンカットを狙うときは `long take` と明記し、`one continuous shot, no cuts` を添え、UIの Multi-Shot を使わずに生成する（[prompt-syntax.md](../prompt-syntax.md) の §4）。
+ワンカットを狙うときは `long take` と明記し、`one continuous shot, no cuts` を添える。Kling 4.0 はスマート絵コンテが常に有効で、明記しないとカットが入ることがある（[prompt-syntax.md](../prompt-syntax.md) の §4）。
 
 | 技法 | 日本語・別名 | 画面で起きること・向く場面 | 記述例 |
 |---|---|---|---|

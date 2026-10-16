@@ -101,6 +101,7 @@ golden hour backlight from the right, long shadows across the floor, warm rim on
 
 - **カメラの動きを書く部分に `film grain` を混ぜない。** モデルが「平滑化すべきノイズ」と解釈する場合があるという報告がある。ルック指定は「見た目」の項目にまとめる。
 - ルックは**末尾に層として並べる**と効きやすい。例：`shallow depth of field, subtle film grain, anamorphic flares, teal and orange grade`
+- **色の配分を比率で書く。** Kling 4.0 の公式ガイドの詳細な作例は、`Charcoal and storm blue occupy 60% of the palette, smoke-brown stone 30%, and fire orange 10%.` のように主色・副色・差し色を60:30:10で指定している（確度【公式】）。光源も「窓からの柔らかい昼光が唯一の動機のある主光源」のように方向と役割で書き、ハイライトとシャドウのどこを保持するかまで書く。
 
 ---
 
