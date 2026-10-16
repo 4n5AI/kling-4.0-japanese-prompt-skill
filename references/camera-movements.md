@@ -168,7 +168,7 @@
 
 - `Long take, one continuous shot, no cuts。冒頭はstatic camera（固定）で人物の静止した表情を捉える。3秒目からslow dolly in（ゆっくり前進）で瞳のアップへ寄る。7秒目でrack focusし、背景のドアを開ける人物へピントを送って動きを止める。`
 
-**カットを割る**ときは `Shot 1 (3s):` のショットラベル形式にします。ショットラベルと長回しの使い分け、秒数の制約は [prompt-syntax.md](prompt-syntax.md) の §3・§4 を参照してください。
+**カットを割る**ときは、`0～4秒：` の区間ごとにショットサイズとカメラを書き、ショット数とカットの種類（`3ショット、ハードカットでつなぐ`）を明記します。Kling 4.0 はスマート絵コンテが常に有効で、書かないとモデルがショットを分けることがあります。区間の書き方とワンカットの指定は [prompt-syntax.md](prompt-syntax.md) の §4 を参照してください。
 
 ### 3. 禁止・注意事項
 - **1ショット1主要カメラアクション**: 複数のカメラワークを1ショットに指定すると、指示が無視されるか破綻します。動きは1つ、多くても方向が矛盾しない2つまでに絞ります。
@@ -176,5 +176,5 @@
 - **矛盾する指示を重ねない**: `handheld`（手持ち）と `locked steady`（固定）を同時に指定しません。
 - **速度語を省かない**: `slowly` / `smoothly` / `gradually` を添えます。原則は「ゆっくり」。
 - **揺れは弱く限定する**: `shaky` や `violent handheld` を強く指定すると被写体の形状が崩れます。`subtle handheld, natural micro-movement` のように量を限定します。
-- **ワンカット（連続撮影）とカット割り（シーン切り替え）の混同**: ワンカットを意図する場合は **`long take`**（Kling公式の例は `one continuous long take without any cuts`、`a single unbroken shot with no edited transitions` と書く／確度【公式】）と明記し、UIの Multi-Shot を使わない設定で生成します。詳細は [prompt-syntax.md](prompt-syntax.md) の §4。
+- **ワンカット（連続撮影）とカット割り（シーン切り替え）の混同**: ワンカットを意図する場合は **`long take`**（Kling公式の例は `one continuous long take without any cuts`、`a single unbroken shot with no edited transitions` と書く／確度【公式】）と明記し、`全編を通して、目に見えるカットのない連続したワンショット` のようにカットを入れないことを書きます。スマート絵コンテが常に有効なので、明記しないとカットが入ることがあります。詳細は [prompt-syntax.md](prompt-syntax.md) の §4。
 - **複数ショットを出すとき**: 隣接ショットのサイズと角度を変え、人物の外見・画面上の左右の立ち位置・光源の方向を各ショットで反復します。詳細は [multi-shot-continuity.md](multi-shot-continuity.md) を参照。
