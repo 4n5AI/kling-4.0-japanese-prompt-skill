@@ -1,6 +1,6 @@
 # Kling 4.0 Japanese Prompt Skill
 
-Kling 4.0（4.0 Flashを含む）の動画プロンプトを、日本語で作成・修正・翻訳・短縮するためのSkillです。参照素材、ショット構成、カメラワーク、音声を整理し、そのまま貼り付けて使えるプロンプトを作成します。特に、**日本語リップシンク用セリフの表記最適化（難読漢字・数字・英語）**、**Kling 4.0公式ユーザーガイドに沿った書き方（公式のプロンプト構成、時間とショット、30秒のワンカット、キーフレーム、全能リファレンスの`@`タグ、動画編集と人気動画の再現、字幕）**、**シネマトグラフィー（カメラワーク・ショットサイズ・レンズ・構図・ライティング）のリファレンス**、**色・エフェクト・編集・ジャンルのルックまで含む400種以上の映像技法辞典**を収録しています。
+Kling 4.0（4.0 Flashを含む）の動画プロンプトを、日本語で作成・修正・翻訳・短縮するためのSkillです。参照素材、ショット構成、カメラワーク、音声を整理し、そのまま貼り付けて使えるプロンプトを作成します。特に、**日本語リップシンク用セリフの表記最適化（難読漢字・数字・英語）**、**Kling 4.0公式ユーザーガイドに沿った書き方（公式のプロンプト構成、時間とショット、30秒のワンカット、キーフレーム、全能リファレンスの`@`タグ、動画編集と人気動画の再現、字幕）**、**シネマトグラフィー（カメラワーク・ショットサイズ・レンズ・構図・画面比率・ライティング）のリファレンス**、**色・エフェクト・編集・ジャンルのルック・音響・物語構成まで含む560種以上の映像技法辞典**を収録しています。
 
 [Agent Skills](https://agentskills.io) 標準の `SKILL.md` 形式で書かれており、**OpenAI Codex、Claude Code、Google Antigravity、Gemini CLI、Cursor、GitHub Copilot、OpenCode** など、この形式に対応する生成AIエージェントで共通に使えます。特定のエージェント専用の記述は `SKILL.md` に含めていません。
 
@@ -31,6 +31,7 @@ Kling 4.0（4.0 Flashを含む）の動画プロンプトを、日本語で作�
 | 動画編集・再現 | 「@動画1を編集」と「その他は変更しない」の必須ルール、追加・置き換え・削除・スタイル変更・セリフ変更、人気動画の再現 |
 | セリフと音声 | 話者と話し方を外に置き、引用符の中は発話だけ。ステレオ、9言語と方言・アクセント、複数話者の音声要件 |
 | 文字と字幕 | 多言語の文字・絵文字・ロゴ、字幕の位置・サイズ・表示時間の指定 |
+| 作例の書き方 | 公式の長い作例から読み取れる型：動作の途中から始める、カットをまたいでレンズ・高さ・光・環境音を固定する、音楽を入れる区間と音量の優先順位、感情の段階（L1〜L5）、失敗の条件の書き方、始終フレームへの到達のさせ方 |
 
 ### 3. シネマトグラフィーのリファレンスを収録
 
@@ -38,12 +39,12 @@ Kling 4.0（4.0 Flashを含む）の動画プロンプトを、日本語で作�
 
 | リファレンス | 内容 |
 |---|---|
-| [`camera-movements.md`](references/camera-movements.md) | カメラの動きの原則と、仕組み別の早見表（前後・横移動・パン/チルト・ズーム・回り込み・昇降/空撮・視点/ピント） |
-| [`shot-composition.md`](references/shot-composition.md) | ショットサイズ（ELS〜ECU）、アングルと高さ、構図11種 |
+| [`camera-movements.md`](references/camera-movements.md) | カメラの動きの原則と、仕組み別の早見表（前後・横移動・パン/チルト・ズーム・回り込み・昇降/空撮・視点/ピント）。カメラ指示の4要素（動き・速度・フレーミング・終わり方）、取り違えやすい動きの見分け方、手持ちの揺れの量 |
+| [`shot-composition.md`](references/shot-composition.md) | ショットサイズ（ELS〜ECU）、アングルと高さ、構図11種、映画の画面比率とKlingの縦横比の対応、参考スチルをプロンプトに書き起こす観点 |
 | [`lens-and-focus.md`](references/lens-and-focus.md) | 焦点距離と画角の早見表、被写界深度、アナモルフィック・ヴィンテージのルック |
 | [`lighting-color.md`](references/lighting-color.md) | 三点照明とライティングパターン、光の質、時間帯、色温度、カラーグレード |
-| [`multi-shot-continuity.md`](references/multi-shot-continuity.md) | 複数ショットの連続性、編集文法、絵コンテとの対応 |
-| [`techniques/`](references/techniques/index.md) | 映像技法辞典400種以上（カメラの動き・ショット・アングル・構図・照明・レンズ・色・大気・時間・エフェクト・編集・ジャンル・トレンドのルック）。英語名や日本語の呼び名から、説明とプロンプトの記述例を引く |
+| [`multi-shot-continuity.md`](references/multi-shot-continuity.md) | 複数ショットの連続性、編集文法、カットをまたいで固定する条件、マッチカット、絵コンテとの対応 |
+| [`techniques/`](references/techniques/index.md) | 映像技法辞典560種以上（カメラの動き・ショット・アングル・構図・照明・レンズ・色・大気・時間・エフェクト・編集・ジャンル・トレンドのルック・音響・物語構成）。英語名や日本語の呼び名（ガヤ、劇伴、音先行、起承転結、伏線など）から、説明とプロンプトの記述例を引く |
 
 ### 4. 日本語の現場用語を国際標準の英語へ変換
 
@@ -192,7 +193,7 @@ Skill本文はインストール先の skills/kling-40/SKILL.md にある。
 - [`references/lens-and-focus.md`](references/lens-and-focus.md)：焦点距離と画角、被写界深度、レンズのルック
 - [`references/lighting-color.md`](references/lighting-color.md)：ライティング、時間帯、色温度、カラーグレード
 - [`references/multi-shot-continuity.md`](references/multi-shot-continuity.md)：複数ショットの連続性、編集文法、絵コンテとの対応
-- [`references/techniques/`](references/techniques/index.md)：映像技法辞典400種以上（13分類）。索引の `index.md` から分類ごとのファイルを引く
+- [`references/techniques/`](references/techniques/index.md)：映像技法辞典560種以上（15分類）。索引の `index.md` から分類ごとのファイルを引く
 - [`references/source-guide.md`](references/source-guide.md)：出典、4.0／4.0 Flashの仕様表と入力制限、モード別条件、確度の区分
 - [`agents/openai.yaml`](agents/openai.yaml)：Codex向けの表示・呼び出し設定（任意。Codex以外のエージェントは無視します）
 - [`install.sh`](install.sh)：各エージェントの skills ディレクトリへ配置するスクリプト
@@ -200,9 +201,9 @@ Skill本文はインストール先の skills/kling-40/SKILL.md にある。
 
 ### 出典
 
-Kling公式資料（確認日：4.0ユーザーガイドは**2026-10-16**、そのほかは2026-09-29）。
+Kling公式資料（確認日：4.0ユーザーガイドは**2026-10-26**、そのほかは2026-09-29）。
 
-- **[Kling 4.0 ユーザーガイド（日本語）](https://kling.ai/ja/quickstart/kling-4-model-user-guide)**（[英語版](https://kling.ai/quickstart/kling-4-model-user-guide)、2026-10-15公開、本文取得済み）：このSkillの主な根拠
+- **[Kling 4.0 ユーザーガイド（日本語）](https://kling.ai/ja/quickstart/kling-4-model-user-guide)**（[英語版](https://kling.ai/quickstart/kling-4-model-user-guide)、2026-10-15公開、2026-10-16に取得し2026-10-26に再取得して照合）：このSkillの主な根拠
 - [Kling 4.0 さらに進化！ You call the shots（リリースノート）](https://kling.ai/release-note/release-notes/Kling_4)：ページ本文は作成環境から直接取得できなかったため、ユーザーが提供した日本語版のスクリーンショットで仕様表と本文を確認
 - [Kling VIDEO 3.0 Model User Guide](https://kling.ai/quickstart/klingai-video-3-model-user-guide)（本文取得済み）
 - [Kling VIDEO 3.0 Omni Model User Guide](https://kling.ai/quickstart/klingai-video-3-omni-model-user-guide)（本文取得済み）
@@ -210,7 +211,14 @@ Kling公式資料（確認日：4.0ユーザーガイドは**2026-10-16**、そ�
 - [Kling Element Library User Guide](https://kling.ai/quickstart/klingai-element-library-3-user-guide)（本文取得済み）
 - [Kling AI Prompt Guide（公式ブログ）](https://kling.ai/blog/kling-ai-prompt-guide) ほか公式ブログ・旧ガイド（一覧は [出典ガイド](references/source-guide.md)）
 
-シネマトグラフィーの各ガイドと映像技法辞典（`references/techniques/`）の説明と記述例は、一般的な撮影・編集・映像表現の知識を基にこのリポジトリで書き下ろしたものです。Kling 4.0 での効き目は検証していません。
+シネマトグラフィーの各ガイドと映像技法辞典（`references/techniques/`）の説明と記述例は、一般的な撮影・編集・映像表現の知識を基にこのリポジトリで書き下ろしたものです。分類の立て方・技法名の選定・プロンプトの型には、次の公開サイトを参考にしました（確認日：2026-10-26。各サイトの文章は転載していません。使い方の詳細は [出典ガイド](references/source-guide.md) の §4）。Kling 4.0 での効き目は検証していません。
+
+- [Melies：Cinematic Techniques](https://melies.co/cinematic-techniques)：技法辞典の分類と技法名、取り違えやすい技法の考え方
+- [GrokFilm](https://grokfilm.app/)：音響・物語構成の分類と、ジャンル・照明・編集・エフェクトの追加の技法名
+- [AI Camera Movements](https://aicameramovements.com/)：カメラ指示の4要素（動き・速度・フレーミング・終わり方）の型
+- [SHOT.CAFE](https://shot.cafe/)：参考スチルを書き起こす観点（時刻、屋内外、ショットの種類、人数、アングル、色）
+- [FILMGRAB](https://film-grab.com/)：映画の画面比率とKlingの縦横比の対応
+- [eyecannndy](https://eyecannndy.com/)：作成環境から本文を読めなかったため、内容は反映していません
 
 **確度の扱い**：Skillの各記述には確度を付けています。公式資料で本文を確認したもの（3.0以前の資料に由来するものは世代を明記し、4.0のユーザーガイドと食い違う場合は4.0を優先）、複数の第三者情報源が一致するもの、裏付けが弱いものを区別し、公式で未確認の事項をユーザーへ断定して伝えない方針です。シネマトグラフィーの知識は一般的な撮影知識であり、Klingの公式資料には含まれません。「どの語彙がAI動画モデルに効くか」の記述は第三者の検証報告に基づき、その多くは他モデルでの検証です。
 
