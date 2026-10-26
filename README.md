@@ -211,14 +211,7 @@ Kling公式資料（確認日：4.0ユーザーガイドは**2026-10-26**、そ�
 - [Kling Element Library User Guide](https://kling.ai/quickstart/klingai-element-library-3-user-guide)（本文取得済み）
 - [Kling AI Prompt Guide（公式ブログ）](https://kling.ai/blog/kling-ai-prompt-guide) ほか公式ブログ・旧ガイド（一覧は [出典ガイド](references/source-guide.md)）
 
-シネマトグラフィーの各ガイドと映像技法辞典（`references/techniques/`）の説明と記述例は、一般的な撮影・編集・映像表現の知識を基にこのリポジトリで書き下ろしたものです。分類の立て方・技法名の選定・プロンプトの型には、次の公開サイトを参考にしました（確認日：2026-10-26。各サイトの文章は転載していません。使い方の詳細は [出典ガイド](references/source-guide.md) の §4）。Kling 4.0 での効き目は検証していません。
-
-- [Melies：Cinematic Techniques](https://melies.co/cinematic-techniques)：技法辞典の分類と技法名、取り違えやすい技法の考え方
-- [GrokFilm](https://grokfilm.app/)：音響・物語構成の分類と、ジャンル・照明・編集・エフェクトの追加の技法名
-- [AI Camera Movements](https://aicameramovements.com/)：カメラ指示の4要素（動き・速度・フレーミング・終わり方）の型
-- [SHOT.CAFE](https://shot.cafe/)：参考スチルを書き起こす観点（時刻、屋内外、ショットの種類、人数、アングル、色）
-- [FILMGRAB](https://film-grab.com/)：映画の画面比率とKlingの縦横比の対応
-- [eyecannndy](https://eyecannndy.com/)：作成環境から本文を読めなかったため、内容は反映していません
+シネマトグラフィーの各ガイドと映像技法辞典（`references/techniques/`）の説明と記述例は、一般的な撮影・編集・映像表現の知識を基にこのリポジトリで書き下ろしたものです。Kling 4.0 での効き目は検証していません。
 
 **確度の扱い**：Skillの各記述には確度を付けています。公式資料で本文を確認したもの（3.0以前の資料に由来するものは世代を明記し、4.0のユーザーガイドと食い違う場合は4.0を優先）、複数の第三者情報源が一致するもの、裏付けが弱いものを区別し、公式で未確認の事項をユーザーへ断定して伝えない方針です。シネマトグラフィーの知識は一般的な撮影知識であり、Klingの公式資料には含まれません。「どの語彙がAI動画モデルに効くか」の記述は第三者の検証報告に基づき、その多くは他モデルでの検証です。
 
